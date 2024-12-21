@@ -1,0 +1,21 @@
+<div class="bg-light">
+  <h3 class="py-3 container">Categories</h3>
+<owl-carousel-o [options]="customOptions">
+
+  @for (category of categories; track category._id) {
+    <ng-container>
+        <ng-template carouselSlide [id]="category._id">
+          <div class="inner-card p-3">
+          <img [src]="category.image" [alt]="category.name" height="130px" width="130px" class="border border-2 border-success p-1 rounded rounded-circle object-fit-contains"  [title]="category.slug">
+          <h5 class="py-2 text-success text-center">{{category.name}}</h5>
+        </div>
+        </ng-template>
+      </ng-container>
+    }
+    @empty {
+      <div class="d-flex justify-content-center align-items-center">
+      <span class="loader"></span>
+    </div>
+    }
+</owl-carousel-o>
+</div>

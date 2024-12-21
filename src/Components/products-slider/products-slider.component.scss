@@ -1,0 +1,15 @@
+.owl-nav button {
+  background: none; /* Remove any background styling */
+  border: none; /* Remove border */
+  width: 30px; /* Adjust width as needed */
+  height: 30px; /* Adjust height as needed */
+  color: transparent; /* Make text invisible */
+}
+
+.owl-nav button:focus {
+  outline: none; /* Remove focus outline */
+}
+
+.owl-nav button span {
+  display: none; /* Hide the text content of the nav buttons */
+}

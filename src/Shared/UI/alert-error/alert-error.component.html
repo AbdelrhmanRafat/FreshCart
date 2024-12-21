@@ -1,0 +1,28 @@
+@if(formName.get(controlName)?.errors && formName.get(controlName)?.touched){
+    <div class="alert alert-danger my-3">
+     <ul>
+       @if(formName.get(controlName)?.getError('required')){
+       <li>Input is Required</li>
+       }
+       @if(formName.get(controlName)?.getError('minlength')){
+        <li>Input must be at least 2 char long</li>
+       }
+       @if(formName.get(controlName)?.getError('maxlength')){
+        <li>Input must be at max 20 char long</li>
+       }
+       @if (formName.get(controlName)?.getError('email')) {
+         <li>Please enter valid mail address</li>
+       }
+       @if (formName.get(controlName)?.getError('pattern')) {
+        <li>Please enter valid password</li>
+      }
+     </ul>
+    </div>
+   }
+   @else if(formName.getError('missMatch') && formName.get(controlName)?.touched && controlName== "rePassword"){
+    <div class="alert alert-danger my-3">
+      <ul>
+    <li>Please enter Password Match same password</li>
+  </ul>
+  </div>
+  }

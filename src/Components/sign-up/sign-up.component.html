@@ -1,0 +1,32 @@
+<div class="bg-light py-5">
+    <div class="w-75 mx-auto">
+      <form [formGroup]="register" (ngSubmit)="sendData()">
+     <h3 class="text-black fw-semibold">Register Now : </h3>
+     <h5 class="py-2">Name : </h5>
+     <input [ngClass]="getValidatorClassName('name')" formControlName="name" class="form-control p-3" placeholder="Enter Your Name : " type="text" />
+     <alert-error [formName]="register" controlName="name" />
+     <h5 class="py-2">Email : </h5>
+     <input [ngClass]="getValidatorClassName('email')" formControlName="email" class="form-control p-3" placeholder="Enter Your Email : " type="email" />
+     <alert-error [formName]="register" controlName="email" />
+     <h5 class="py-2">Password : </h5>
+     <input [ngClass]="getValidatorClassName('password')" formControlName="password" class="form-control p-3" placeholder="Enter Your Email : " type="password" />
+     <alert-error [formName]="register" controlName="password" />
+     <h5 class="py-2">Repeat Password :</h5>
+     <input formControlName="rePassword" class="form-control p-3" placeholder="Enter Your Email : " type="password" />
+     <alert-error [formName]="register" controlName="rePassword" />
+     <div class="py-3">
+      @if(errorMessage != ""){
+        <p class="text-danger">{{errorMessage}}</p>
+      }
+      <button class="btn btn-success text-white">
+      @if(!isBtnSubmit){
+        Register
+      }
+      @else {
+        <i class="fa-solid fa-spinner fa-spin"></i>
+      }
+    </button>
+    </div>
+    </form>
+    </div>
+    </div>

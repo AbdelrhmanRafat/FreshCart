@@ -1,0 +1,4 @@
+<input [ngClass]="{
+    'is-valid' : !register.get(controlName)?.errors && (register.get(controlName)?.touched || register.get(controlName)?.dirty),
+    'is-invalid' : register.get(controlName)?.errors && (register.get(controlName)?.touched || register.get(controlName)?.dirty)
+   }" [formControlName]="controlName" class="form-control p-3" [placeholder]="PlaceHolder" [type]="typeName" />
