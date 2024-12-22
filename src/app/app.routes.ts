@@ -15,6 +15,7 @@ import { WishListComponent } from '../Components/wish-list/wish-list.component';
 import { authGuard } from '../core/guards/auth.guard';
 import { ForgetPasswordComponent } from '../Components/forget-password/forget-password.component';
 import { isLoggedGuardGuard } from '../core/guards/is-logged-guard.guard';
+import { AddressComponent } from '../Components/address/address.component';
 
 export const routes: Routes = [
     {path : '' , component : AuthLayoutComponent,
@@ -35,8 +36,9 @@ export const routes: Routes = [
         {path : 'cart',component : CartComponent},
         {path : 'orders',component : OrdersComponent},
         {path : 'products',component : ProductsComponent},
-        {path : 'productDetails',component : ProductDetailsComponent},
+        {path : 'productDetails/:id',component : ProductDetailsComponent},
         {path : 'categories',component : CategoriesComponent},
+        {path : 'address', component : AddressComponent}
     ]},
     {path : '**' , component : NotFoundComponent, title : "Not Found"}
 
