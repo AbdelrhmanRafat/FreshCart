@@ -15,16 +15,8 @@
      <input formControlName="rePassword" class="form-control p-3" placeholder="Enter Your Email : " type="password" />
      <alert-error [formName]="register" controlName="rePassword" />
      <div class="py-3">
-      @if(errorMessage != ""){
-        <p class="text-danger">{{errorMessage}}</p>
-      }
       <button class="btn btn-success text-white">
-      @if(!isBtnSubmit){
         Register
-      }
-      @else {
-        <i class="fa-solid fa-spinner fa-spin"></i>
-      }
     </button>
     </div>
     </form>

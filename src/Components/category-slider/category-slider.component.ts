@@ -18,9 +18,6 @@ export class CategorySliderComponent implements OnInit{
     this._CategoriesService.getCategories().subscribe({
       next : (res) => {
       this.categories = res.data;
-      },
-      error : (err) => {
-
       }
     })
   }

@@ -17,8 +17,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class SignInComponent {
   private _AuthService = inject(AuthService);
   private _Router = inject(Router);
-  isBtnSubmit = false;
-  errorMessage : string = "";
   signIn = new FormGroup({
     email : new FormControl(null,UserValidators.email),
     password : new FormControl(null,UserValidators.password)
@@ -31,7 +29,6 @@ export class SignInComponent {
      }
   }
   sendData() {
-    this.isBtnSubmit = true;
     console.log(this.signIn);
     if(this.signIn.valid){
       this._AuthService.signIn(this.signIn.value).subscribe({
@@ -40,18 +37,12 @@ export class SignInComponent {
             localStorage.setItem('token',res.token);
             this._AuthService.saveUserData();
             this._Router.navigate(['/Home']);
-            this.isBtnSubmit = false;
           }
-        },
-        error : (err : HttpErrorResponse) => {
-          this.errorMessage = err.error.message;
-          this.isBtnSubmit = false;
         }
       })
     }
     else {
       this.signIn.markAllAsTouched();
-      this.isBtnSubmit = false;
     }
    }
    goToForgetPass() {

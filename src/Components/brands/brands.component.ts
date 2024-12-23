@@ -17,9 +17,6 @@ export class BrandsComponent implements OnInit {
    this._BrandsService.getBrands().subscribe({
     next : (res) => {
     this.brands = res.data;
-    },
-    error : (err) => {
-
     }
    })
   }

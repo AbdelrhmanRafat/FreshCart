@@ -19,8 +19,6 @@ import { InputUserComponent } from "../../Shared/UI/input-user/input-user.compon
 export class SignUpComponent {
   private _AuthService = inject(AuthService);
   private _Router = inject(Router);
-  isBtnSubmit = false;
-  errorMessage : string = "";
   register = new FormGroup({
   name : new FormControl(null,UserValidators.name),
   email : new FormControl(null,UserValidators.email),
@@ -36,26 +34,19 @@ export class SignUpComponent {
  }
 
  sendData() {
-  this.isBtnSubmit = true;
   console.log(this.register);
   if(this.register.valid){
     this._AuthService.signUp(this.register.value).subscribe({
       next : (res) => {
         if(res.message == "success"){
           this._Router.navigate(['/Signin']);
-          this.isBtnSubmit = false;
         }
-      },
-      error : (err : HttpErrorResponse) => {
-        this.errorMessage = err.error.message;
-        this.isBtnSubmit = false;
       }
     })
   }
   else {
     this.register.get("rePassword")?.setValue(null);
     this.register.markAllAsTouched();
-    this.isBtnSubmit = false;
   }
  }
 }

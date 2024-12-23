@@ -24,14 +24,9 @@ export class ProductsComponent implements OnInit {
   private toastr = inject(ToastrService);
   loadingProductId: string | null = null;
    getProducts() {
-    this.isLoading = true;
     this._ProductsService.getProducts().subscribe({
       next : (res) => {
         this.products = res.data;
-        this.isLoading = false;
-      },
-      error : (err) => {
-         this.isLoading = false;
       }
     })
    }
@@ -39,12 +34,8 @@ export class ProductsComponent implements OnInit {
     this.loadingProductId = productId; // Set the loading state for the clicked product
     this._CartService.addProductToCart(productId).subscribe({
      next : (res) => {
-      console.log("Hello",res.data);
       this.toastr.success("Product Added Successfully");
       this.loadingProductId = null; // Reset the loading state
-     },
-     error : () => {
-      this.loadingProductId = null; // Reset the loading state even on error
      }
     })
    }

@@ -27,9 +27,6 @@ payment = () => {
     next : (res) => {
        console.log(res);
        window.location.href = res.session.url;
-    },
-    error : (err) => {
-      console.log(err);
     }
    })
 }
@@ -37,8 +34,6 @@ ngOnInit(): void {
    this._ActivatedRoute.paramMap.subscribe({
      next : (prams) => {
        this.cartId = prams.get('id') || "";
-     },
-     error : (err) => {
      }
    });
 }

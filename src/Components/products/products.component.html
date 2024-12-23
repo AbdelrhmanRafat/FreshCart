@@ -2,7 +2,6 @@
   <input [(ngModel)]="searchTerm" type="text" class="form-control p-3" placeholder="Enter Product Name.."/>
   <div class="text-center">
     <div class="row gy-3 py-3 overflow-auto">
-      @if(isLoading == false){
         @for (product of products|search : searchTerm; track product._id) {
           <div class="col-6 col-md-3">
             <div class="product p-2 shadow h-100 d-flex flex-column">
@@ -42,12 +41,6 @@
             <h4 class="text-main">No Products</h4>
           </div>
         }
-      }
-     @else {
-      <div class="d-flex justify-content-center align-items-center vh-50">
-        <span class="loader"></span>
-      </div>
-     }
     </div>
   </div>
 </div>

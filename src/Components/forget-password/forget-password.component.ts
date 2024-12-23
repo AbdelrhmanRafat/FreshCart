@@ -18,8 +18,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class ForgetPasswordComponent implements OnInit {
   private _AuthService = inject(AuthService);
   private _Router = inject(Router);
-  isBtnSubmit = false;
-  errorMessage : string = "";
   currentStep = 1;
   currentEmail = "";
   // Form Groups ------------------------------------
@@ -41,7 +39,6 @@ export class ForgetPasswordComponent implements OnInit {
    }
  }
  sendforgetPassword() {
-  this.isBtnSubmit = true;
   if(this.forgetPassword.valid){
     this._AuthService.forgetPass(this.forgetPassword.value).subscribe({
       next : (res) => {
@@ -54,23 +51,15 @@ export class ForgetPasswordComponent implements OnInit {
           this.resetPassword.get('email')?.setValue(email);
           localStorage.setItem('currenEmail',email);
           }
-          this.errorMessage = "";
-          this.isBtnSubmit = false;
         }
-      },
-      error : (err : HttpErrorResponse) => {
-        this.errorMessage = err.error.message;
-        this.isBtnSubmit = false;
       }
     })
   }
   else {
     this.forgetPassword.markAllAsTouched();
-    this.isBtnSubmit = false;
   }
  }
  sendverifyCode() {
-  this.isBtnSubmit = true;
   console.log(this.verificationCode);
   if(this.verificationCode.valid){
     this._AuthService.verifyResetCode(this.verificationCode.value).subscribe({
@@ -79,23 +68,15 @@ export class ForgetPasswordComponent implements OnInit {
         if(res.status == "Success"){
           this.currentStep = 3;
           localStorage.setItem('currenStep',this.currentStep.toString());
-          this.errorMessage = "";
-          this.isBtnSubmit = false;
         }
-      },
-      error : (err : HttpErrorResponse) => {
-        this.errorMessage = err.error.message;
-        this.isBtnSubmit = false;
       }
     })
   }
   else {
     this.forgetPassword.markAllAsTouched();
-    this.isBtnSubmit = false;
   }
  }
  sendResetPassword() {
-  this.isBtnSubmit = true;
   if(this.resetPassword.valid){
     this._AuthService.resetPassword(this.resetPassword.value).subscribe({
       next : (res) => {
@@ -104,21 +85,13 @@ export class ForgetPasswordComponent implements OnInit {
           localStorage.setItem('token',res.token);
           localStorage.removeItem('currenStep');
           localStorage.removeItem('currenEmail');
-          this.isBtnSubmit = false;
-          this.errorMessage = "";
           this._Router.navigate(['/Home']);
         }
-      },
-      error : (err : HttpErrorResponse) => {
-        console.log(err);
-        this.errorMessage = err.error.message;
-        this.isBtnSubmit = false;
       }
     })
   }
   else {
     this.forgetPassword.markAllAsTouched();
-    this.isBtnSubmit = false;
   }
  }
  ngOnInit(): void {
