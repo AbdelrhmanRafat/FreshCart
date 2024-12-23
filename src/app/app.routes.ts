@@ -38,7 +38,7 @@ export const routes: Routes = [
         {path : 'products',component : ProductsComponent},
         {path : 'productDetails/:id',component : ProductDetailsComponent},
         {path : 'categories',component : CategoriesComponent},
-        {path : 'address', component : AddressComponent}
+        {path : 'address/:id', component : AddressComponent}
     ]},
     {path : '**' , component : NotFoundComponent, title : "Not Found"}
 
