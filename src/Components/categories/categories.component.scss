@@ -2,18 +2,18 @@ i {
     font-size: xx-large;
   }
   .fixed-card-height {
-    max-height: 300px !important;
+    max-height: 200px !important;
   }
   
   .image-container {
     width: 100%; /* Full width of the card */
-    height: 400px; /* Fixed height for consistency */
+    height: 300px; /* Fixed height for consistency */
     overflow: hidden; /* Prevent image overflow */
   }
   
   .fixed-image {
-    width: 100%; /* Fill the container width */
-    height: 100%; /* Fill the container height */
+    width: 90%; /* Fill the container width */
+    height: 90%; /* Fill the container height */
     object-fit: cover; /* Crop and cover the container without distortion */
   }
   

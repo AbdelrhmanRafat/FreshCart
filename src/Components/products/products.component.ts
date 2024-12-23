@@ -4,27 +4,34 @@ import { Product } from '../../core/interfaces/product';
 import { RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from '../../core/Services/cart.service';
+import { SearchPipe } from '../../core/pipes/search.pipe';
+import { FormsModule } from '@angular/forms';
+import { TitleSplicePipe } from '../../core/pipes/title-splice.pipe';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink,SearchPipe,FormsModule,TitleSplicePipe],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent implements OnInit {
   products : Product[] = [];
+  searchTerm : string = "";
+  isLoading = false;
   private  _ProductsService = inject(ProductsService);
   private _CartService = inject(CartService)
   private toastr = inject(ToastrService);
   loadingProductId: string | null = null;
    getProducts() {
+    this.isLoading = true;
     this._ProductsService.getProducts().subscribe({
       next : (res) => {
         this.products = res.data;
+        this.isLoading = false;
       },
       error : (err) => {
-
+         this.isLoading = false;
       }
     })
    }
