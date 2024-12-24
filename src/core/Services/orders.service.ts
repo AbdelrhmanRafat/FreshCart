@@ -12,11 +12,7 @@ export class OrdersService {
     }
     getCheckOutSession = (cartId : string,shippingAddress : object) : Observable<any> => {
       return this._HttpClient.post
-      (`${baseUrl}api/v1/orders/checkout-session/${cartId}?url=http://localhost:4200`,{shippingAddress},{
-        headers : {
-          token : localStorage.getItem('token')!,
-        }
-      })
+      (`${baseUrl}api/v1/orders/checkout-session/${cartId}?url=http://localhost:4200`,{shippingAddress})
     }
   
 }

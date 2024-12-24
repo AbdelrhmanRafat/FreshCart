@@ -3,8 +3,12 @@ import { provideRouter, withHashLocation, withInMemoryScrolling, withViewTransit
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 
 import { routes } from './app.routes';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { provideToastr } from 'ngx-toastr';
+import { headersInterceptor } from '../core/interceptors/headers.interceptor';
+import { errorInterceptor } from '../core/interceptors/error.interceptor';
+import { spinnerInterceptor } from '../core/interceptors/spinner.interceptor';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes,
@@ -14,9 +18,9 @@ export const appConfig: ApplicationConfig = {
     scrollPositionRestoration : 'top'
    }),
   ),
-  provideHttpClient(),
+  provideHttpClient(withFetch(),withInterceptors([headersInterceptor,errorInterceptor,spinnerInterceptor])),
   importProvidersFrom(BrowserAnimationsModule),
   provideAnimations(), // required animations providers
-  provideToastr(), // Toastr providers
+  provideToastr(), provideAnimationsAsync(), // Toastr providers
 ],
 };

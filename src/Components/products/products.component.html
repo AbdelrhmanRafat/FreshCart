@@ -24,14 +24,8 @@
                 </h5>
               </div>
               <button class="bg-main w-100 text-white btn" 
-                      (click)="addToCart(product._id)" 
-                      [disabled]="loadingProductId === product._id">
-                @if (loadingProductId === product._id) {
-                  <i class="fa-solid fa-spinner fa-spin"></i>
-                }
-                @else {
+                      (click)="addToCart(product._id)">
                   Add <i class="fa-solid fa-cart-shopping fs-6"></i>
-                }
               </button>
             </div>
           </div>
@@ -41,6 +35,18 @@
             <h4 class="text-main">No Products</h4>
           </div>
         }
+    </div>
+    <div class="d-flex justify-content-center align-items-center gap-3 my-3 p-2">
+      <button 
+      [disabled]= "currentPage == 1 " 
+      (click)="onPageChange('left')" 
+      class="btn bg-main py-2 px-3 rounded rounded-1 text-white">
+      <i class="fa-solid fs-6 fa-left-long"></i>
+    </button>
+      <button [disabled]= "currentPage == numberOfPages"  
+      (click)="onPageChange('right')" class="btn bg-main py-2 px-3 rounded rounded-1 text-white">
+      <i class="fa-solid fs-6 fa-right-long"></i>
+    </button>
     </div>
   </div>
 </div>

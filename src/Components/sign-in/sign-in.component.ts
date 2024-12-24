@@ -29,7 +29,6 @@ export class SignInComponent {
      }
   }
   sendData() {
-    console.log(this.signIn);
     if(this.signIn.valid){
       this._AuthService.signIn(this.signIn.value).subscribe({
         next : (res) => {

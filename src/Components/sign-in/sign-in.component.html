@@ -1,6 +1,6 @@
 <div class="bg-light py-5">
     <div class="w-75 mx-auto py-5">
-      <form [formGroup]="signIn" (ngSubmit)="sendData()">
+    <form [formGroup]="signIn" (ngSubmit)="sendData()">
      <h3 class="text-black fw-semibold">Login Now : </h3>
      <h5 class="py-3">Email : </h5>
      <input formControlName = "email" [ngClass]="getValidatorClassName('email')" class="form-control p-3" placeholder="Enter Your Email : " type="email" />

@@ -1,4 +1,4 @@
-export interface Root {
+export interface ProductRoot {
     results: number
     metadata: Metadata
     data: Product[]
