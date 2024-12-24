@@ -31,6 +31,7 @@ export class CategorySliderComponent implements OnInit{
     autoplayTimeout: 1, // Minimal timeout for continuous movement
     autoplayHoverPause: false, // Don't pause on hover
     smartSpeed: 300, // Adjust to control the smoothness
+    rtl : true,
     dots: false,
     navText: ['', ''],
     responsive: {

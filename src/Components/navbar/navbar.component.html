@@ -6,42 +6,49 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto my-2 mb-lg-0 ps-2">
+      <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav my-2 mb-lg-0 ps-2">
           <li class="nav-item">
-            <a class="nav-link" routerLink="Home" routerLinkActive="navbar-active">Home</a>
+            <a class="nav-link" routerLink="Home" routerLinkActive="navbar-active">{{"navbar.home" | translate}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="products" routerLinkActive="navbar-active">Products</a>
+            <a class="nav-link" routerLink="products" routerLinkActive="navbar-active">{{"navbar.products" | translate}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="categories" routerLinkActive="navbar-active">Categories</a>
+            <a class="nav-link" routerLink="categories" routerLinkActive="navbar-active">{{"navbar.categories" | translate}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="brands" routerLinkActive="navbar-active">Brands</a>
+            <a class="nav-link" routerLink="brands" routerLinkActive="navbar-active">{{"navbar.brands" | translate}}</a>
           </li>
         </ul>
-        <ul class="navbar-nav ms-auto my-2 mb-lg-0">
+        <ul class="navbar-nav my-2 mb-lg-0">
+          <li class="nav-item dropdown p-2">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{"navbar.lang" | translate}}
+            </a>
+            <ul class="dropdown-menu">
+              <li><a [ngClass]="changeSelectedBackground('en')" class="dropdown-item" (click)="changeLang('en')" href="#">English</a></li>
+              <li><a [ngClass]="changeSelectedBackground('ar')" class="dropdown-item" (click)="changeLang('ar')" href="#">Arabic</a></li>
+            </ul>
+          </li>
           <li class="nav-item p-2 position-relative fit-content">
-            <a class="nav-link" routerLink="wishlist" routerLinkActive="navbar-active">WishList
+            <a class="nav-link" routerLink="wishlist" routerLinkActive="navbar-active">{{"navbar.wishlist" | translate}}
               <i class="fa-regular fa-heart"></i>
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 9
-                <span class="visually-hidden">unread messages</span>
               </span>
             </a>
           </li>
           <li class="nav-item p-2 position-relative fit-content">
-            <a class="nav-link" routerLink="cart" routerLinkActive="navbar-active">Cart
+            <a class="nav-link" routerLink="cart" routerLinkActive="navbar-active">{{"navbar.cart" | translate}}
               <i class="fa-solid fa-cart-shopping"></i>
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 9
-                <span class="visually-hidden">unread messages</span>
               </span>
             </a>
           </li>
           <li class="nav-item p-2">
-            <a class="nav-link" routerLink="signin" (click)="removeToken()">Logout</a>
+            <a class="nav-link" routerLink="signin" (click)="removeToken()">{{"navbar.logout" | translate}}</a>
           </li>
         </ul>
         
