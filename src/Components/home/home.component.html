@@ -1,4 +1,10 @@
 <app-products-slider></app-products-slider>
 <app-category-slider></app-category-slider>
 <h3 class="py-3 container">{{ 'home.products_title' | translate }}</h3>
-<app-products></app-products>
+@defer (on viewport) {
+    <app-products></app-products>
+} @placeholder {
+    <div class="d-flex justify-content-center align-items-center vh-50">   
+        <img src="assets/images/freshcart-logo.svg" class="img-fluid" alt="FreshCart">    
+      </div>
+  }

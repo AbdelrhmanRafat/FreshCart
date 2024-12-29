@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { ProductsComponent } from "../products/products.component";
 import { ProductsSliderComponent } from "../products-slider/products-slider.component";
 import { CategorySliderComponent } from "../category-slider/category-slider.component";
 import { TranslateModule } from '@ngx-translate/core';
+import { defer } from 'rxjs';
 
 @Component({
   selector: 'app-home',
