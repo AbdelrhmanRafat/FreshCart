@@ -17,7 +17,7 @@ export class ProductsSliderComponent {
     pullDrag: false,
     navSpeed: 700,
     autoplay : true,
-    dots : true,
+    dots : false,
     rtl : true,
     navText: ['Prev', 'Next'],
     responsive: {
