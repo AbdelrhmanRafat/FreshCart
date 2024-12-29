@@ -3,32 +3,7 @@
       <div class="row gy-3 py-3 overflow-auto">
         @for (product of products; track product._id) {
           <div class="col-6 col-md-3">
-            <div class="product p-2 shadow h-100 d-flex flex-column">
-              <div class="position-relative">
-                <img [src]="product.imageCover" class="w-50" />
-                <button (click)="removeFromWishList(product._id)" class="position-absolute p-2 top-0 end-0 btn"><i class="fa-solid fa-heart fs-4 text-danger"></i>
-                </button>
-              </div>
-              <h5 class="mt-2 text-start text-main">{{product.category.name}}</h5>
-              <p class="mt-2 text-start">
-                <a class="text-black text-decoration-none" [routerLink]="'/productDetails/' + product._id">
-                  {{product.title | titleSplice}}
-                </a>
-              </p>
-              <div class="flex-grow-1"></div>
-              <div class="d-flex justify-content-between">
-                <h5 class="text-start text-black">
-                  {{product.price}} <span class="text-success">{{ 'products.currency' | translate }}</span>
-                </h5>
-                <h5 class="text-start text-black">
-                  {{product.ratingsAverage}}<i class="fa-solid fa-star text-warning fs-4"></i>
-                </h5>
-              </div>
-              <button class="bg-main w-100 text-white btn" 
-                      (click)="addToCart(product._id)">
-                Add <i class="fa-solid fa-cart-shopping fs-6"></i>
-              </button>
-            </div>
+            <app-product-card [product]="product" addRemoveWish="remove"></app-product-card>
           </div>
         }
         @empty {

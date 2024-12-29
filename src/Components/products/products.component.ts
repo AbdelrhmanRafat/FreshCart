@@ -12,11 +12,12 @@ import { NgClass } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { WishListService } from '../../core/Services/wish-list.service';
+import { ProductCardComponent } from "../../Shared/UI/product-card/product-card.component";
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [RouterLink,SearchPipe,FormsModule,TitleSplicePipe,MatPaginatorModule,TranslateModule,NgClass],
+  imports: [SearchPipe, FormsModule, MatPaginatorModule, TranslateModule, NgClass, ProductCardComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
@@ -29,9 +30,6 @@ export class ProductsComponent implements OnInit,OnDestroy {
   currentPage = 1;
   AllProducts = 0;
   numberOfPages = 0;
-  private _CartService = inject(CartService);
-  private _WishListService =inject(WishListService);
-  private toastr = inject(ToastrService);
   private getProductsSubscription : Subscription = new Subscription();
   private getCartItemsSubscription : Subscription = new Subscription();
   private AddtoCartSubscription : Subscription = new Subscription();
@@ -43,23 +41,6 @@ export class ProductsComponent implements OnInit,OnDestroy {
         this.numberOfPages = res.metadata.numberOfPages;
       }
     })
-   }
-
-   addToCart(productId : string) {
-    this.AddtoCartSubscription =  this._CartService.addProductToCart(productId).subscribe({
-     next : (res) => {
-      this.toastr.success("Product Added Successfully");
-      this._CartService.cartCounter.next(res.numOfCartItems);
-     }
-    })
-   }
-   addToWishList(productId : string){
-    this._WishListService.addProductToWishList(productId).subscribe({
-      next : (res) => {
-      this.toastr.success("Product Added Successfully");
-      this._WishListService.wishListCounter.next(res.data.length);
-      }
-     })
    }
 
   // Check if the current page is the first page
