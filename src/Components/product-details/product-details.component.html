@@ -1,0 +1,36 @@
+<div class="container mb-3">
+    @if(product != null){
+      <div class="row">
+        <div class="col-md-3">
+          <owl-carousel-o [options]="customOptions">
+            @for (image of images; track $index) {
+              <ng-container>
+                  <ng-template carouselSlide [id]="$index.toString()">
+                    <div class="inner-card p-3">
+                    <img [src]="image" [alt]="product.title"  class="shadow p-1 object-fit-contains"  [title]="product.slug">
+                  </div>
+                  </ng-template>
+                </ng-container>
+              }
+              @empty {
+                <div class="d-flex justify-content-center align-items-center">
+                  <p>{{ 'category_slider.empty_message' | translate }}</p>
+              </div>
+              }
+          </owl-carousel-o>
+        </div>
+        <div class="col-md-9">
+          <div class="inner px-3 d-flex flex-column justify-content-center gap-2 h-100">
+            <h2 class="text-main fw-bolder w-100">{{ product.title }}</h2>
+            <p>{{ product.description }}</p>
+            <p class="text-main">{{ product.price + " " + ('product_details.price_unit' | translate) }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <p>{{ 'product_details.quantity' | translate }} : {{ product.quantity }}</p>
+              <p>{{ product.ratingsAverage + " " }}<span><i class="fa-solid fa-star text-warning fs-5"></i></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+  

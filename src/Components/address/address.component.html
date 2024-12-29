@@ -1,0 +1,32 @@
+<div class="container py-4">
+    <h4>{{ "address.header" | translate }}</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card p-2 h-auto">
+                <form class="h-100" [formGroup]="address" (ngSubmit)="payment()">
+                    <div class="p-4 d-flex flex-column justify-content-start gap-3 h-100 align-items-start">
+                        <div class="w-100">
+                            <h4 class="pb-1">{{ "address.address_label" | translate }}</h4>
+                            <textarea formControlName="details" class="form-control" rows="5" placeholder="{{ 'address.address_placeholder' | translate }}"></textarea>
+                        </div>
+                        <div class="w-100">
+                            <h4 class="pb-1">{{ "address.phone_label" | translate }}</h4>
+                            <input formControlName="phone" class="form-control" placeholder="{{ 'address.phone_placeholder' | translate }}" type="text" />
+                        </div>
+                        <div class="w-100">
+                            <h4 class="pb-1">{{ "address.city_label" | translate }}</h4>
+                            <input formControlName="city" class="form-control" placeholder="{{ 'address.city_placeholder' | translate }}" type="text" />
+                        </div>
+                        <div>
+                            <button class="btn bg-main text-white">{{ "address.checkout_button" | translate }}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img [src]="'assets/images/creditCard.png'" class="img-fluid" alt="{{ 'address.credit_img_alt' | translate }}" />
+        </div>
+    </div>
+</div>

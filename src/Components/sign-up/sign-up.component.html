@@ -1,0 +1,52 @@
+<div class="bg-light py-5">
+  <div class="w-75 mx-auto">
+    <form [formGroup]="register" (ngSubmit)="sendData()">
+      <h3 class="text-black fw-semibold">{{ 'signUp.title' | translate }}</h3>
+
+      <h5 class="py-2">{{ 'signUp.nameLabel' | translate }}</h5>
+      <input 
+        [ngClass]="getValidatorClassName('name')" 
+        formControlName="name" 
+        class="form-control p-3" 
+        [placeholder]="'signUp.namePlaceholder' | translate" 
+        type="text" 
+      />
+      <alert-error [formName]="register" controlName="name" />
+
+      <h5 class="py-2">{{ 'signUp.emailLabel' | translate }}</h5>
+      <input 
+        [ngClass]="getValidatorClassName('email')" 
+        formControlName="email" 
+        class="form-control p-3" 
+        [placeholder]="'signUp.emailPlaceholder' | translate" 
+        type="email" 
+      />
+      <alert-error [formName]="register" controlName="email" />
+
+      <h5 class="py-2">{{ 'signUp.passwordLabel' | translate }}</h5>
+      <input 
+        [ngClass]="getValidatorClassName('password')" 
+        formControlName="password" 
+        class="form-control p-3" 
+        [placeholder]="'signUp.passwordPlaceholder' | translate" 
+        type="password" 
+      />
+      <alert-error [formName]="register" controlName="password" />
+
+      <h5 class="py-2">{{ 'signUp.rePasswordLabel' | translate }}</h5>
+      <input 
+        formControlName="rePassword" 
+        class="form-control p-3" 
+        [placeholder]="'signUp.rePasswordPlaceholder' | translate" 
+        type="password" 
+      />
+      <alert-error [formName]="register" controlName="rePassword" />
+
+      <div class="py-3">
+        <button class="btn btn-success text-white">
+          {{ 'signUp.registerButton' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

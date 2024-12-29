@@ -1,0 +1,24 @@
+<div class="container pt-7 pb-3">
+    <div class="text-center">
+      <div class="row gy-3 py-3 overflow-auto">
+        @for (category of categories; track category._id) {
+          @if($first) {
+            <div class="col-6 col-md-3">
+              <div class="d-flex flex-column justify-content-center gap-3 align-items-start p-2 bg-transparent h-100">
+              <h3 class="text-success fw-bold">{{ 'categories.header' | translate }}</h3>
+              <h4 class="fw-light" [ngClass]="changeTextDirection()">{{ 'categories.description' | translate }}</h4>
+              </div>
+            </div>
+          }
+            <div class="col-6 col-md-3">
+            <div class="text-center p-2 text-success bg-transparent shadow h-100">
+            <div class="image-container">
+            <img [src]="category.image" class="fixed-image" />
+            </div>
+            <h5 class="py-3 text-center">{{category.name}}</h5>
+            </div>
+            </div>
+        }
+      </div>
+    </div>
+    </div>

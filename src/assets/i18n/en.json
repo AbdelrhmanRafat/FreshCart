@@ -1,0 +1,100 @@
+{
+    "navbar" : {
+        "home" : "Home",
+        "products" : "Products",
+        "categories" : "Categories",
+        "brands" : "Brands",
+        "wishlist" : "Wish List",
+        "cart" : "Cart",
+        "logout" : "Logout",
+        "lang" : "Language"
+    },
+        "address": {
+          "header": "Address Data",
+          "address_label": "Address :",
+          "address_placeholder": "Address Data",
+          "phone_label": "Phone :",
+          "phone_placeholder": "Phone No.",
+          "city_label": "City :",
+          "city_placeholder": "City",
+          "checkout_button": "Check Out",
+          "credit_img_alt": "credit img"
+        },
+         "auth_navbar": {
+              "app_logo_alt": "App-logo",
+              "toggle_navigation": "Toggle navigation",
+              "signin": "Sign In",
+              "signup": "Sign Up"
+            },
+            "brands": {
+                "header": "Our Brands",
+                "description": "You can see our brands and each brand includes the products in it"
+              },
+              "cart": {
+                "header": "Shop Cart",
+                "total_price": "Total Price",
+                "price_label": "Price",
+                "remove_button": "Remove",
+                "place_order_button": "Place order",
+                "empty_cart_message": "Cart is Empty.."
+              },
+              "categories": {
+                "header": "Categories",
+                "description": "You can see our categories and each category includes the products in it"
+              },
+              "category_slider": {
+                "header": "Categories",
+                "empty_message": "No categories available"
+              },
+              "forget_password": {
+                "title": "Forget Password",
+                "email_label": "Email",
+                "email_placeholder": "Enter Your Email",
+                "verify_code_label": "Verify Code",
+                "verify_code_placeholder": "Enter Verification Code",
+                "new_password_label": "New Password",
+                "new_password_placeholder": "Enter New Password",
+                "send_button": "Send"
+              },
+              "home": {
+                "products_title": "Products"
+              },
+              "product_details": {
+                "quantity": "Quantity",
+                "price_unit": "EGP"
+              },
+              "products": {
+                "search_placeholder": "Enter Product Name..",
+                "no_products": "No Products",
+                "currency": "EGP"
+              },
+              "alerts": {
+                "required": "Input is Required",
+                "minlength": "Input must be at least 2 characters long",
+                "maxlength": "Input must be at max 20 characters long",
+                "email": "Please enter a valid email address",
+                "pattern": "Please enter a valid password",
+                "missMatch": "Please enter the same password in both fields"
+              },
+              "signUp": {
+                "title": "Sign Up",
+                "nameLabel": "Name",
+                "namePlaceholder": "Enter Your Name",
+                "emailLabel": "Email",
+                "emailPlaceholder": "Enter Your Email",
+                "passwordLabel": "Password",
+                "passwordPlaceholder": "Enter Your Password",
+                "rePasswordLabel": "Repeat Password",
+                "rePasswordPlaceholder": "Repeat Your Password",
+                "registerButton": "Register"
+              },
+              "signIn": {
+                "title": "Login Now",
+                "emailLabel": "Email:",
+                "emailPlaceholder": "Enter Your Email",
+                "passwordLabel": "Password:",
+                "passwordPlaceholder": "Enter Your Password",
+                "loginButton": "Login",
+                "forgotPassword": "Forgotten password?"
+              }
+}

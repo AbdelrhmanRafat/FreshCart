@@ -1,0 +1,41 @@
+    <div class="container">
+    @if(bGetCartItems){
+  <div class=" my-2 bg-main-light p-4 rounded rounded-4">
+  <h2>{{ 'cart.header' | translate }}</h2>
+  <p class="text-main">{{ 'cart.total_price' | translate }} : {{ cart?.totalCartPrice }} EGP</p>
+  <div class="row gy-3">
+     @for (product of products; track product._id) {
+      <div class="col-md-1">
+        <img [src]="product.product.imageCover" [alt]="product.product.title" class="img-fluid" />
+      </div>
+      <div class="col-md-11">
+       <div class="d-flex justify-content-between align-content-center">
+        <div class="py-2">
+          <h4 class="m-0 p-0">{{product.product.title}}</h4>
+          <p class="text-main m-0 py-2">{{ 'cart.price_label' | translate }} : {{ product.price }} EGP</p>
+          <button class="btn bg-transparent m-0 p-0 fw-bold" (click)="RemoveProductFromCart(product.product._id)"><i class="fa-solid px-3 fa-trash text-main"></i>{{ 'cart.remove_button' | translate }}</button>
+        </div>
+        <div class="d-flex justify-content-center align-items-center gap-2">
+          <button (click)="updateProductQty(product.product._id,product.count + 1)" class="btn bg-main text-white">+</button>
+          <span>{{product.count}}</span>
+          <button [disabled]="product.count == 1" (click)="updateProductQty(product.product._id,product.count - 1)" class="btn bg-main text-white">-</button>
+        </div>
+       </div>
+      </div>
+      @if(!($last)){
+        <hr/>
+      }
+     }
+    </div>
+    </div>
+    <button [routerLink]="['/address',cart?._id]" class="my-2 btn bg-main text-white">{{ 'cart.place_order_button' | translate }}</button>
+    }
+    @else {
+      <div class="d-flex justify-content-center align-items-center vh-50">   
+        <img src="assets/images/freshcart-logo.svg" class="img-fluid" alt="FreshCart">    
+      </div>
+    }
+</div>
+    
+
+  

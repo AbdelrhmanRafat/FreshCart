@@ -1,0 +1,28 @@
+@if(formName.get(controlName)?.errors && formName.get(controlName)?.touched){
+  <div class="alert text-danger py-1">
+    <ul>
+      @if(formName.get(controlName)?.getError('required')){
+        <li>{{ 'alerts.required' | translate }}</li>
+      }
+      @if(formName.get(controlName)?.getError('minlength')){
+        <li>{{ 'alerts.minlength' | translate }}</li>
+      }
+      @if(formName.get(controlName)?.getError('maxlength')){
+        <li>{{ 'alerts.maxlength' | translate }}</li>
+      }
+      @if(formName.get(controlName)?.getError('email')) {
+        <li>{{ 'alerts.email' | translate }}</li>
+      }
+      @if(formName.get(controlName)?.getError('pattern')) {
+        <li>{{ 'alerts.pattern' | translate }}</li>
+      }
+    </ul>
+  </div>
+}
+@else if(formName.getError('missMatch') && formName.get(controlName)?.touched && controlName == "rePassword"){
+  <div class="alert text-danger my-3">
+    <ul>
+      <li>{{ 'alerts.missMatch' | translate }}</li>
+    </ul>
+  </div>
+}

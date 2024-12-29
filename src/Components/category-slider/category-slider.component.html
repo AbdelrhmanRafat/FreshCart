@@ -1,0 +1,21 @@
+<div class="bg-light">
+  <h3 class="py-3 container">{{ 'category_slider.header' | translate }}</h3>
+<owl-carousel-o [options]="customOptions">
+
+  @for (category of categories; track category._id) {
+    <ng-container>
+        <ng-template carouselSlide [id]="category._id">
+          <div class="inner-card p-3">
+          <img [src]="category.image" [alt]="category.name"  height="120px"  class="shadow p-1 object-fit-contains"  [title]="category.slug">
+          <h5 class="py-2 text-success text-center overflow-hidden">{{category.name}}</h5>
+        </div>
+        </ng-template>
+      </ng-container>
+    }
+    @empty {
+      <div class="d-flex justify-content-center align-items-center">
+        <p>{{ 'category_slider.empty_message' | translate }}</p>
+    </div>
+    }
+</owl-carousel-o>
+</div>

@@ -1,0 +1,100 @@
+{
+    "navbar": {
+        "home": "الرئيسية",
+        "products": "المنتجات",
+        "categories": "التصنيفات",
+        "brands": "العلامات التجارية",
+        "wishlist": "قائمة الرغبات",
+        "cart": "عربة التسوق",
+        "logout": "تسجيل الخروج",
+         "lang" : "اللغة"
+    },
+    "address": {
+        "header": "بيانات العنوان",
+        "address_label": "العنوان :",
+        "address_placeholder": "بيانات العنوان",
+        "phone_label": "الهاتف :",
+        "phone_placeholder": "رقم الهاتف",
+        "city_label": "المدينة :",
+        "city_placeholder": "المدينة",
+        "checkout_button": "إتمام الشراء",
+        "credit_img_alt": "صورة بطاقة الائتمان"
+      },
+      "auth_navbar": {
+        "app_logo_alt": "شعار التطبيق",
+        "toggle_navigation": "تبديل التنقل",
+        "signin": "تسجيل الدخول",
+        "signup": "إنشاء حساب"
+      },
+      "brands": {
+        "header": "علاماتنا التجارية",
+        "description": "يمكنك رؤية علاماتنا التجارية وكل علامة تحتوي على المنتجات الخاصة بها"
+      },
+      "cart": {
+        "header": "عربة التسوق",
+        "total_price": "السعر الإجمالي",
+        "price_label": "السعر",
+        "remove_button": "إزالة",
+        "place_order_button": "إتمام الطلب",
+        "empty_cart_message": "عربة التسوق فارغة.."
+      },
+      "categories": {
+        "header": "التصنيفات",
+        "description": "يمكنك رؤية تصنيفاتنا وكل تصنيف يحتوي على المنتجات الخاصة به"
+      },
+      "category_slider": {
+        "header": "التصنيفات",
+        "empty_message": "لا توجد تصنيفات متاحة"
+      },
+      "forget_password": {
+        "title": "نسيت كلمة المرور",
+        "email_label": "البريد الإلكتروني",
+        "email_placeholder": "أدخل بريدك الإلكتروني",
+        "verify_code_label": "رمز التحقق",
+        "verify_code_placeholder": "أدخل رمز التحقق",
+        "new_password_label": "كلمة المرور الجديدة",
+        "new_password_placeholder": "أدخل كلمة المرور الجديدة",
+        "send_button": "إرسال"
+      },
+      "home": {
+        "products_title": "المنتجات"
+      },
+      "product_details": {
+        "quantity": "الكمية",
+        "price_unit": "جنيه مصري"
+      },
+      "products": {
+        "search_placeholder": "أدخل اسم المنتج..",
+        "no_products": "لا توجد منتجات",
+        "currency": "جنيه"
+      },
+      "alerts": {
+        "required": "الإدخال مطلوب",
+        "minlength": "يجب أن يحتوي الإدخال على حرفين على الأقل",
+        "maxlength": "يجب أن يحتوي الإدخال على أقصى حد 20 حرفًا",
+        "email": "يرجى إدخال عنوان بريد إلكتروني صالح",
+        "pattern": "يرجى إدخال كلمة مرور صالحة",
+        "missMatch": "يرجى إدخال نفس كلمة المرور في الحقلين"
+      },
+      "signUp": {
+        "title": "تسجيل حساب",
+        "nameLabel": "الاسم",
+        "namePlaceholder": "أدخل اسمك",
+        "emailLabel": "البريد الإلكتروني",
+        "emailPlaceholder": "أدخل بريدك الإلكتروني",
+        "passwordLabel": "كلمة المرور",
+        "passwordPlaceholder": "أدخل كلمة المرور",
+        "rePasswordLabel": "تأكيد كلمة المرور",
+        "rePasswordPlaceholder": "أعد إدخال كلمة المرور",
+        "registerButton": "تسجيل"
+      },
+      "signIn": {
+        "title": "تسجيل الدخول الآن",
+        "emailLabel": "البريد الإلكتروني:",
+        "emailPlaceholder": "أدخل بريدك الإلكتروني",
+        "passwordLabel": "كلمة المرور:",
+        "passwordPlaceholder": "أدخل كلمة المرور",
+        "loginButton": "تسجيل الدخول",
+        "forgotPassword": "هل نسيت كلمة المرور؟"
+      }
+}
