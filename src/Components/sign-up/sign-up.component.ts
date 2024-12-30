@@ -40,7 +40,7 @@ export class SignUpComponent {
     this._AuthService.signUp(this.register.value).subscribe({
       next : (res) => {
         if(res.message == "success"){
-          this._Router.navigate(['/Signin']);
+          this._Router.navigate(['/signin']);
         }
       }
     })

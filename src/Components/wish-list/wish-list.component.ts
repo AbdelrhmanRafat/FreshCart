@@ -12,7 +12,7 @@ import { NgClass } from '@angular/common';
 @Component({
   selector: 'app-wish-list',
   standalone: true,
-  imports: [TranslateModule, ProductCardComponent,NgClass],
+  imports: [TranslateModule, ProductCardComponent],
   templateUrl: './wish-list.component.html',
   styleUrl: './wish-list.component.scss'
 })

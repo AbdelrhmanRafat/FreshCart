@@ -7,7 +7,7 @@
         <ng-template carouselSlide [id]="category._id">
           <div class="inner-card p-3">
           <img [src]="category.image" [alt]="category.name"  height="120px"  class="shadow p-1 object-fit-contains"  [title]="category.slug">
-          <h5 class="py-2 text-success text-center overflow-x-auto">{{category.name}}</h5>
+          <h6 class="py-2 text-success text-center overflow-x-hidden">{{category.name}}</h6>
         </div>
         </ng-template>
       </ng-container>
