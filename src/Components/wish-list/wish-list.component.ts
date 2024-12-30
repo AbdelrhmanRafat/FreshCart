@@ -7,11 +7,12 @@ import { TitleSplicePipe } from '../../core/pipes/title-splice.pipe';
 import { CartService } from '../../core/Services/cart.service';
 import { ToastrService } from 'ngx-toastr';
 import { ProductCardComponent } from "../../Shared/UI/product-card/product-card.component";
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-wish-list',
   standalone: true,
-  imports: [TranslateModule, ProductCardComponent],
+  imports: [TranslateModule, ProductCardComponent,NgClass],
   templateUrl: './wish-list.component.html',
   styleUrl: './wish-list.component.scss'
 })

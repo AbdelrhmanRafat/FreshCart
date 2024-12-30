@@ -6,11 +6,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CartService } from '../../../core/Services/cart.service';
 import { WishListService } from '../../../core/Services/wish-list.service';
 import { ToastrService } from 'ngx-toastr';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [RouterLink,TitleSplicePipe,TranslateModule],
+  imports: [RouterLink,TitleSplicePipe,TranslateModule,NgClass],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss'
 })

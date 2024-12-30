@@ -3,7 +3,7 @@
       <div class="row gy-3 py-3 overflow-auto">
         @for (product of products; track product._id) {
           <div class="col-6 col-md-3">
-            <app-product-card [product]="product" addRemoveWish="remove"></app-product-card>
+            <app-product-card [product]="product" addRemoveWish="remove" [heartClass]="'fa-solid text-danger'"></app-product-card>
           </div>
         }
         @empty {

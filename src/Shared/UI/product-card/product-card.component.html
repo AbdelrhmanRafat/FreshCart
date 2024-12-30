@@ -1,7 +1,7 @@
   <div class="product p-2 shadow h-100 d-flex flex-column">
     <div class="position-relative">
       <img [src]="product.imageCover" class="w-50" />
-      <button (click)="AddRemoveWishList(product._id)" class="position-absolute p-2 top-0 end-0 btn"><i class="fa-regular fa-heart fs-4"></i>
+      <button (click)="AddRemoveWishList(product._id)" class="position-absolute p-2 top-0 end-0 btn"><i class="fa-heart fs-4" [ngClass]="heartClass"></i>
       </button>
     </div>
     <h5 class="mt-2 text-start text-main">{{product.category.name}}</h5>
