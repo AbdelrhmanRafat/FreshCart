@@ -22,7 +22,7 @@ export class ForgetPasswordComponent implements OnInit {
   currentStep = 1;
   currentEmail = "";
   // Form Groups ------------------------------------
-  forgetPassword = new FormGroup({
+forgetPassword = new FormGroup({
   email : new FormControl(null,UserValidators.email),
  })
  verificationCode = new FormGroup({
@@ -40,7 +40,8 @@ export class ForgetPasswordComponent implements OnInit {
    }
  }
  sendforgetPassword() {
-  if(this.forgetPassword.valid){
+  if(this.forgetPassword.valid)
+  {
     this._AuthService.forgetPass(this.forgetPassword.value).subscribe({
       next : (res) => {
         console.log(res);
@@ -61,7 +62,6 @@ export class ForgetPasswordComponent implements OnInit {
   }
  }
  sendverifyCode() {
-  console.log(this.verificationCode);
   if(this.verificationCode.valid){
     this._AuthService.verifyResetCode(this.verificationCode.value).subscribe({
       next : (res) => {
