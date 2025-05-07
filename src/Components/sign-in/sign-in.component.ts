@@ -7,6 +7,7 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../core/Services/auth.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
+import { CookieService } from '../../core/Services/cookie.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -18,6 +19,8 @@ import { TranslateModule } from '@ngx-translate/core';
 export class SignInComponent {
   private _AuthService = inject(AuthService);
   private _Router = inject(Router);
+  private _CookieService = inject(CookieService);
+
   signIn = new FormGroup({
     email : new FormControl(null,UserValidators.email),
     password : new FormControl(null,UserValidators.password)
@@ -29,12 +32,13 @@ export class SignInComponent {
       'is-invalid' : this.signIn.get(controlName)?.errors && (this.signIn.get(controlName)?.touched || this.signIn.get(controlName)?.dirty)
      }
   }
+
   sendData() {
     if(this.signIn.valid){
       this._AuthService.signIn(this.signIn.value).subscribe({
         next : (res) => {
           if(res.message == "success"){
-            localStorage.setItem('token',res.token);
+            this._CookieService.setCookie('token', res.token);
             this._AuthService.saveUserData();
             this._Router.navigate(['/Home']);
           }
@@ -45,8 +49,9 @@ export class SignInComponent {
       this.signIn.markAllAsTouched();
     }
    }
+
    goToForgetPass() {
-    localStorage.removeItem('currenStep');
-    localStorage.removeItem('currenEmail');
+    this._CookieService.removeCookie('currenStep');
+    this._CookieService.removeCookie('currenEmail');
    }
 }

@@ -7,6 +7,8 @@ import { WishListService } from '../../core/Services/wish-list.service';
 import { NavLanguageItemComponent } from "../../Shared/UI/nav-language-item/nav-language-item.component";
 import { NavItemComponent } from "../../Shared/UI/nav-item/nav-item.component";
 import { NavItemWithLogoComponent } from "../../Shared/UI/nav-item-with-logo/nav-item-with-logo.component";
+import { CookieService } from '../../core/Services/cookie.service';
+
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -17,11 +19,15 @@ import { NavItemWithLogoComponent } from "../../Shared/UI/nav-item-with-logo/nav
 export class NavbarComponent implements OnInit {
   private readonly _CartService = inject(CartService);
   private readonly _WishListService = inject(WishListService);
+  private readonly _CookieService = inject(CookieService);
+  
   cartCounter = 0;
   wishListCounter = 0;
+
   removeToken(){
-    localStorage.removeItem('token');
+    this._CookieService.removeCookie('token');
   }
+
   ngOnInit(): void {
     this._CartService.cartCounter.subscribe({
       next : (res) => {

@@ -48,14 +48,14 @@ export class ProductDetailsComponent implements OnInit {
     },
     nav: false,
   };
-   getProduct() {
-    this._ProductsService.getProduct(this.id || "").subscribe({
-      next : (res) => {
-        this.product = res.data;
-        this.images = res.data.images;
-      }
-    })
-   }
+  //  getProduct() {
+  //   this._ProductsService.getProduct(this.id || "").subscribe({
+  //     next : (res) => {
+  //       this.product = res.data;
+  //       this.images = res.data.images;
+  //     }
+  //   })
+  //  }
    ngOnInit(): void {
     console.log(this._ActivatedRoute.paramMap.subscribe({
       next : (pram) => {
@@ -65,7 +65,7 @@ export class ProductDetailsComponent implements OnInit {
         console.log(err);
       }
     }));
-    this.getProduct();
+    //this.getProduct();
   }
    
 }
